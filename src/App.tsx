@@ -1,9 +1,9 @@
 import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-import Main from "./pages/Main";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Main from "./pages/main/Main";
+import Projects from "./pages/projects/Projects";
+import Contact from "./pages/contact/Contact";
 
 const router = createBrowserRouter([
     {

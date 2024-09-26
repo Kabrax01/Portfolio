@@ -1,4 +1,5 @@
-import technologies from "../assets/technologies";
+import "./main.scss";
+import technologies from "../../assets/technologies";
 
 function Main() {
     return (
@@ -18,10 +19,13 @@ function Main() {
                     <ul>
                         {technologies.map((tech) => {
                             return (
-                                <div className="technologies">
+                                <li className="technologies" key={tech.name}>
                                     <p>{tech.name}</p>
-                                    <img src={tech.img} alt="" />
-                                </div>
+                                    <img
+                                        src={tech.img}
+                                        alt={`${tech.name} icon`}
+                                    />
+                                </li>
                             );
                         })}
                     </ul>

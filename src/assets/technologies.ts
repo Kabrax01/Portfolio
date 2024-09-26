@@ -12,6 +12,7 @@ const technologies: technologiesType = [
     { name: "Firebase", img: "../../public/firebase.png" },
     { name: "Vitest", img: "../../public/vitest.png" },
     { name: "RTL", img: "../../public/octopus.png" },
+    { name: "Git", img: "../../public/git.png" },
 ];
 
 export default technologies;
