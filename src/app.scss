@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.layout {
+    height: 100vh;
+    background-color: darkgrey;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.navbar {
+    grid-row: 1/2;
+    height: 3rem;
+    width: 100%;
+}
+
+main {
+    grid-row: 2/3;
+    height: 100%;
+}
