@@ -1,18 +1,20 @@
-type tech = { name: string; img: string };
-type technologiesType = tech[];
+interface techType {
+    name: string;
+    img: string;
+}
 
-const technologies: technologiesType = [
-    { name: "HTML", img: "../../public/html.png" },
-    { name: "CSS", img: "../../public/css.png" },
-    { name: "Sass", img: "../../public/sass.png" },
-    { name: "JavaScript", img: "../../public/js.png" },
-    { name: "TypeScript", img: "../../public/typescript.png" },
-    { name: "React", img: "../../public/react.png" },
-    { name: "Tailwind", img: "../../public/tailwind.png" },
-    { name: "Firebase", img: "../../public/firebase.png" },
-    { name: "Vitest", img: "../../public/vitest.png" },
-    { name: "RTL", img: "../../public/octopus.png" },
-    { name: "Git", img: "../../public/git.png" },
+const technologies: techType[] = [
+    { name: "HTML", img: "/html.png" },
+    { name: "CSS", img: "/css.png" },
+    { name: "Sass", img: "/sass.png" },
+    { name: "JavaScript", img: "/js.png" },
+    { name: "TypeScript", img: "/typescript.png" },
+    { name: "React", img: "/react.png" },
+    { name: "Tailwind", img: "/tailwind.png" },
+    { name: "Firebase", img: "/firebase.png" },
+    { name: "Vitest", img: "/vitest.png" },
+    { name: "RTL", img: "/octopus.png" },
+    { name: "Git", img: "/git.png" },
 ];
 
 export default technologies;
