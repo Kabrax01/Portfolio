@@ -21,7 +21,6 @@ a {
     background-color: col.$color-primary-blue;
     display: grid;
     grid-template-rows: auto 1fr;
-
     color: col.$color-white;
 }
 
@@ -77,6 +76,9 @@ main {
     justify-self: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
+    height: calc(100vh - 80px);
     max-width: 1800px;
+    min-width: 90%;
 }
