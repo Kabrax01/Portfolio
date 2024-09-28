@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 
 const duration = 1;
 const ease = "easeOut";
+const type = "spring";
 
 const variantLeft = {
     initial: { x: "100%", opacity: 0 },
@@ -14,16 +15,17 @@ const variantLeft = {
         opacity: 1,
         transition: {
             duration: duration,
-            type: "tween",
+            type: type,
             ease: ease,
         },
     },
     exit: {
-        x: "-100%",
+        scale: 0,
+        rotate: 360,
         opacity: 0,
         transition: {
             duration: duration,
-            type: "tween",
+            type: type,
             ease: ease,
         },
     },
@@ -36,16 +38,17 @@ const variantRight = {
         opacity: 1,
         transition: {
             duration: duration,
-            type: "tween",
+            type: type,
             ease: ease,
         },
     },
     exit: {
-        x: "100%",
+        scale: 0,
+        rotate: 360,
         opacity: 0,
         transition: {
             duration: duration,
-            type: "tween",
+            type: type,
             ease: ease,
         },
     },
