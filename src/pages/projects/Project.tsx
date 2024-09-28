@@ -19,7 +19,8 @@ type ProjectProps = {
             };
         };
         exit: {
-            x: string;
+            scale: number;
+            rotate: number;
             opacity: number;
             transition: {
                 duration: number;
