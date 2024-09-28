@@ -1,18 +1,21 @@
-@use "../../sass/colors" as col;
+@use "../../sass" as scss;
 
 .projects {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    overflow-y: scroll;
     height: 100%;
     width: 100%;
-    scrollbar-width: none;
+
+    .arrow {
+    }
 
     .project {
-        margin: 4rem 0;
+        margin: 0 4rem;
         position: relative;
+        border-radius: scss.$border-radius-small;
+        box-shadow: 0 0 2rem scss.$color-wite-light;
+        border: 1px solid scss.$color-white;
 
         h2 {
             position: absolute;
@@ -20,19 +23,22 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
+            border-radius: scss.$border-radius-small;
             padding: 1rem 0;
             text-align: center;
+            font-size: 2.5rem;
             backdrop-filter: blur(5px);
             z-index: 20;
         }
 
         &__img {
+            border-radius: scss.$border-radius-small;
             overflow: hidden;
             position: relative;
             z-index: 10;
 
             img {
-                border-radius: 10px;
+                border-radius: scss.$border-radius-small;
                 max-width: 50rem;
                 height: auto;
                 transition: all 0.3s;
@@ -45,13 +51,58 @@
 
         &__desc {
             position: absolute;
-            background-color: white;
+            background-color: scss.$color-white;
             color: black;
             text-align: center;
-            border-radius: 20px;
-            bottom: 10%;
-            // transform: translateY(6.5rem);
-            transition: all 0.5s;
+            border-radius: scss.$border-radius-small;
+            bottom: 10px;
+            transition: all scss.$transition-slow;
+            opacity: 0;
+        }
+
+        &__desc.open {
+            bottom: -4.5rem;
+            opacity: 1;
+        }
+
+        &__github,
+        &__website {
+            position: absolute;
+            padding: 0.5rem 1rem;
+            border-radius: scss.$border-radius-small;
+            background-color: scss.$color-white;
+            opacity: 0;
+            transition: all scss.$transition-slow;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                p {
+                    color: scss.$color-black;
+                }
+
+                img {
+                    height: 3rem;
+                }
+            }
+        }
+
+        &__github {
+            top: 10px;
+            left: 7rem;
+        }
+
+        &__github.open,
+        &__website.open {
+            top: -5.5rem;
+            opacity: 1;
+        }
+
+        &__website {
+            top: 10px;
+            right: 7rem;
         }
     }
 }

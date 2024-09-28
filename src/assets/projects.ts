@@ -1,4 +1,4 @@
-interface projectsType {
+export interface ProjectsType {
     name: string;
     siteUrl: string;
     githubUrl: string;
@@ -6,7 +6,7 @@ interface projectsType {
     description: string;
     id: number;
 }
-const projects: projectsType[] = [
+const projects: ProjectsType[] = [
     {
         name: "Chatrix",
         siteUrl: "https://kabrax01.github.io/Chatrix/",
@@ -17,7 +17,7 @@ const projects: projectsType[] = [
         id: 1,
     },
     {
-        name: "Chatrix",
+        name: "Projekt 2",
         siteUrl: "https://kabrax01.github.io/Chatrix/",
         githubUrl: "https://github.com/Kabrax01/Chatrix",
         img: "../../public/chatrix.webp",
@@ -26,7 +26,7 @@ const projects: projectsType[] = [
         id: 2,
     },
     {
-        name: "Chatrix",
+        name: "Projekt 3",
         siteUrl: "https://kabrax01.github.io/Chatrix/",
         githubUrl: "https://github.com/Kabrax01/Chatrix",
         img: "../../public/chatrix.webp",
