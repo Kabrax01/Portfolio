@@ -46,7 +46,7 @@ export function Project({ project, variant }: ProjectProps) {
         }, 1000);
 
         return () => clearTimeout(openDelay);
-    });
+    }, []);
 
     return (
         <motion.div
