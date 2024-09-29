@@ -7,6 +7,7 @@ import {
     listVariants,
     containerVariants,
     containerVariants2,
+    h3Variants,
 } from "./framerVariants";
 
 function Main() {
@@ -30,9 +31,9 @@ function Main() {
                 </motion.p>
                 <div className="main__tech">
                     <motion.h3
-                        initial={{ opacity: 0, x: "-10rem" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}>
+                        variants={h3Variants}
+                        initial="initial"
+                        animate="animate">
                         Tech stack:
                     </motion.h3>
                     <motion.ul
