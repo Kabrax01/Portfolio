@@ -61,6 +61,7 @@ function Projects() {
     function moveRight() {
         if (index === 0) {
             setIndex(projects.length - 1);
+            setVariant(variantRight);
         } else {
             setIndex((prev) => prev - 1);
             setVariant(variantRight);
@@ -70,6 +71,7 @@ function Projects() {
     function moveLeft() {
         if (index === projects.length - 1) {
             setIndex(0);
+            setVariant(variantLeft);
         } else {
             setIndex((prev) => prev + 1);
             setVariant(variantLeft);

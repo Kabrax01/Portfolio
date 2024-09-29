@@ -1,5 +1,3 @@
-import { delay } from "framer-motion";
-
 export const imgVariants = {
     initial: { opacity: 0, y: "100%" },
     animate: {

@@ -33,12 +33,16 @@
             overflow: hidden;
             position: relative;
             z-index: 10;
+            aspect-ratio: 16/9;
+            max-height: 30rem;
+            width: auto;
+            object-position: center;
 
             img {
                 border-radius: scss.$border-radius-small;
-                max-width: 50rem;
-                height: auto;
                 transition: all 0.3s;
+                height: 100%;
+                width: 100%;
             }
 
             img:hover {
@@ -52,13 +56,15 @@
             color: black;
             text-align: center;
             border-radius: scss.$border-radius-small;
-            bottom: 10px;
+            bottom: 0;
             transition: all scss.$transition-slow;
             opacity: 0;
+            padding: 0.2rem 0.5rem;
+            width: 100%;
         }
 
         &__desc.open {
-            bottom: -4.5rem;
+            transform: translateY(calc(100% + 1.5rem));
             opacity: 1;
         }
 
