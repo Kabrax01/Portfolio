@@ -53,6 +53,16 @@ const projects: ProjectsType[] = [
             "Notes is simple application allowing users to add, delete and edit notes. It stores data in browser storage. Builded without using context API to face the problem of props-drilling",
         id: 4,
     },
+    {
+        name: "Tic-Tac-Toe",
+        siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
+        githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
+        img: "../../public/projects/TTT_large",
+        tabletsImg: "../../public/projects/TTT_medium",
+        mobileImg: "../../public/projects/TTT_mobile",
+        description: "Classic Tic-Tac-Toe game",
+        id: 5,
+    },
 ];
 
 export default projects;
