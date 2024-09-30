@@ -1,40 +1,19 @@
 import { useEffect, useState } from "react";
-import { ProjectsType } from "../../assets/projects";
 import { motion } from "framer-motion";
+import { ProjectProps } from "./types";
 
-type ProjectProps = {
-    project: ProjectsType;
-    variant: {
-        initial: {
-            x: string;
-            opacity: number;
-        };
-        animate: {
-            x: number;
-            opacity: number;
-            transition: {
-                duration: number;
-                type: string;
-                ease: string;
-            };
-        };
-        exit: {
-            scale: number;
-            rotate: number;
-            opacity: number;
-            transition: {
-                duration: number;
-                type: string;
-                ease: string;
-            };
-        };
-    };
-};
-
-export function Project({ project, variant }: ProjectProps) {
+function Project({ project, variant }: ProjectProps) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { name, img, description, githubUrl, siteUrl } = project;
+    const {
+        name,
+        img,
+        description,
+        githubUrl,
+        siteUrl,
+        mobileImg,
+        tabletsImg,
+    } = project;
 
     function close() {
         setIsOpen(false);
@@ -51,14 +30,25 @@ export function Project({ project, variant }: ProjectProps) {
     return (
         <motion.div
             className="project"
-            onMouseOver={() => setIsOpen(true)}
+            onMouseEnter={() => setIsOpen(true)}
             initial="initial"
             animate="animate"
             exit="exit"
             variants={variant}>
             <h2>{name}</h2>
             <div className="project__img">
-                <img src={img} alt={`${name} app preview image`} />
+                <picture>
+                    <source
+                        media="(max-width: 480px)"
+                        srcSet={`${mobileImg}.webp`}
+                    />
+                    <source
+                        media="(max-width: 1024px)"
+                        srcSet={`${tabletsImg}.webp`}
+                    />
+                    <source media="(min-width: 769px)" srcSet={`${img}.webp`} />
+                    <img src={`${img}.webp`} alt={`${name} app screenshot`} />
+                </picture>
             </div>
             <div
                 className={`project__desc ${isOpen ? "open" : ""}`}
@@ -84,3 +74,5 @@ export function Project({ project, variant }: ProjectProps) {
         </motion.div>
     );
 }
+
+export default Project;

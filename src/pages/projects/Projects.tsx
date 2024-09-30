@@ -1,80 +1,29 @@
 import "./projects.scss";
 import projects from "../../assets/projects";
-import { Project } from "./Project";
+import Project from "./Project";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-
-const duration = 1;
-const ease = "easeOut";
-const type = "spring";
-
-const variantLeft = {
-    initial: { x: "100%", opacity: 0 },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: duration,
-            type: type,
-            ease: ease,
-        },
-    },
-    exit: {
-        scale: 0,
-        rotate: 360,
-        opacity: 0,
-        transition: {
-            duration: duration,
-            type: type,
-            ease: ease,
-        },
-    },
-};
-
-const variantRight = {
-    initial: { x: "-100%", opacity: 0 },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: duration,
-            type: type,
-            ease: ease,
-        },
-    },
-    exit: {
-        scale: 0,
-        rotate: 360,
-        opacity: 0,
-        transition: {
-            duration: duration,
-            type: type,
-            ease: ease,
-        },
-    },
-};
+import { variantLeft, variantRight } from "./framerVariants";
 
 function Projects() {
     const [index, setIndex] = useState(0);
     const [variant, setVariant] = useState(variantLeft);
 
     function moveRight() {
+        setVariant(variantRight);
         if (index === 0) {
             setIndex(projects.length - 1);
-            setVariant(variantRight);
         } else {
             setIndex((prev) => prev - 1);
-            setVariant(variantRight);
         }
     }
 
     function moveLeft() {
+        setVariant(variantLeft);
         if (index === projects.length - 1) {
             setIndex(0);
-            setVariant(variantLeft);
         } else {
             setIndex((prev) => prev + 1);
-            setVariant(variantLeft);
         }
     }
 
