@@ -45,7 +45,15 @@
         .surname,
         .message_container {
             position: relative;
-            margin: 1.2rem 0;
+            margin: 1.5rem 0;
+
+            .error {
+                position: absolute;
+                z-index: 20;
+                top: -2rem;
+                right: 0;
+                color: scss.$color-error;
+            }
         }
 
         .form_label {

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
+import { Errors, validateForm } from "../../utils/formValidation";
 
 function Contact() {
     const [name, setName] = useState("");
@@ -8,6 +9,7 @@ function Contact() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState<Errors | null>(null);
     const formRef = useRef<HTMLFormElement | null>(null);
 
     useEffect(() => {
@@ -21,7 +23,8 @@ function Contact() {
                     target.previousElementSibling as HTMLElement | null;
 
                 if (label) {
-                    label.style.transform = "translateY(-2.2rem)";
+                    label.style.transform =
+                        "translateY(-2.2rem) translateX(-1rem)";
                     label.style.color = "white";
                 }
             }
@@ -44,6 +47,12 @@ function Contact() {
 
     function handleSubmit(e: React.SyntheticEvent) {
         e.preventDefault();
+
+        const { errors } = validateForm(name, surname, email, message);
+
+        setErrors(errors);
+
+        if (Object.keys(errors).length) return;
 
         async function sendEmail() {
             if (!formRef.current) return;
@@ -69,6 +78,7 @@ function Contact() {
 
         sendEmail();
     }
+
     return (
         <div className="contact">
             <h1>Get in touch !</h1>
@@ -77,6 +87,7 @@ function Contact() {
                 ref={formRef}
                 onSubmit={handleSubmit}>
                 <div className="name">
+                    {errors?.name && <p className="error">{errors.name}</p>}
                     <label className="form_label" htmlFor="name">
                         Name:
                     </label>
@@ -90,6 +101,9 @@ function Contact() {
                     />
                 </div>
                 <div className="surname">
+                    {errors?.surname && (
+                        <p className="error">{errors.surname}</p>
+                    )}
                     <label className="form_label" htmlFor="surname">
                         Surname:
                     </label>
@@ -102,8 +116,9 @@ function Contact() {
                     />
                 </div>
                 <div className="email">
+                    {errors?.email && <p className="error">{errors.email}</p>}
                     <label className="form_label" htmlFor="email">
-                        E-mail:
+                        Email:
                     </label>
                     <input
                         className="input"
@@ -114,6 +129,9 @@ function Contact() {
                     />
                 </div>
                 <div className="message_container">
+                    {errors?.message && (
+                        <p className="error">{errors.message}</p>
+                    )}
                     <label className="form_label" htmlFor="message">
                         Message:
                     </label>
@@ -135,9 +153,3 @@ function Contact() {
 }
 
 export default Contact;
-
-// function isValidEmail(email) {
-//     const re =
-//       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return re.test(String(email).toLowerCase());
-//   }
