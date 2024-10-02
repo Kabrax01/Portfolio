@@ -10,7 +10,7 @@ function Contact() {
     useEffect(() => {
         const unmountSvg = setTimeout(() => {
             setShow(false);
-        }, 1500);
+        }, 2000);
 
         return () => clearTimeout(unmountSvg);
     }, []);
