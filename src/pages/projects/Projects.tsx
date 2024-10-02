@@ -2,7 +2,7 @@ import "./projects.scss";
 import projects from "../../assets/projects";
 import Project from "./Project";
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { variantLeft, variantRight } from "./framerVariants";
 
 function Projects() {
@@ -28,7 +28,11 @@ function Projects() {
     }
 
     return (
-        <div className="projects">
+        <motion.div
+            className="projects"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}>
             <img
                 className="arrow"
                 src="./arrow-left-white.png"
@@ -48,7 +52,7 @@ function Projects() {
                 alt="arrow right"
                 onClick={moveRight}
             />
-        </div>
+        </motion.div>
     );
 }
 
