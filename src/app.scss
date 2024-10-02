@@ -1,4 +1,4 @@
-@use "./sass/colors" as col;
+@use "./sass" as scss;
 
 * {
     margin: 0;
@@ -12,22 +12,24 @@ ul {
 }
 
 a {
-    color: col.$color-white;
+    color: scss.$color-white;
     text-decoration: none;
 }
 
 .layout {
     height: 100vh;
-    background-color: col.$color-primary-blue;
+    width: 100vw;
+    background-color: scss.$color-primary-blue;
     display: grid;
     grid-template-rows: auto 1fr;
-    color: col.$color-white;
+    color: scss.$color-white;
+    overflow: hidden;
 }
 
 .navbar {
-    background-color: col.$color-black;
+    background-color: scss.$color-black;
     grid-row: 1/2;
-    width: 100vw;
+    width: 100%;
 
     &__container {
         height: fit-content;
@@ -36,9 +38,12 @@ a {
         display: flex;
         padding: 1rem 4rem;
 
-        img {
-            height: 3rem;
+        .logo_link {
             margin-right: auto;
+
+            img {
+                height: 3rem;
+            }
         }
 
         nav {
@@ -60,7 +65,7 @@ a {
                 width: 0;
                 left: 0;
                 bottom: -5px;
-                background-color: col.$color-white;
+                background-color: scss.$color-white;
                 transition: all 0.3s;
             }
 

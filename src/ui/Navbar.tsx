@@ -4,7 +4,10 @@ function Navbar() {
     return (
         <div className="navbar">
             <div className="navbar__container">
-                <img src="./logo.svg" alt="" />
+                <Link to="/" className="logo_link">
+                    <img src="./logo.svg" alt="logo image" />
+                </Link>
+
                 <nav>
                     <Link to="/">Main</Link>
                     <Link to="/projects">Projects</Link>
