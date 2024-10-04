@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { Divide as Hamburger } from "hamburger-react";
+import { useState } from "react";
 
 function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    function closeNavigation() {
+        setIsOpen(false);
+    }
+
     return (
         <div className="navbar">
             <div className="navbar__container">
@@ -8,10 +16,18 @@ function Navbar() {
                     <img src="./logo.svg" alt="logo image" />
                 </Link>
 
-                <nav>
-                    <Link to="/">Main</Link>
-                    <Link to="/projects">Projects</Link>
-                    <Link to="/contact">Contact</Link>
+                <Hamburger toggled={isOpen} toggle={setIsOpen} />
+
+                <nav className={`navigation ${isOpen ? "open" : ""}`}>
+                    <Link to="/" onClick={closeNavigation}>
+                        Main
+                    </Link>
+                    <Link to="/projects" onClick={closeNavigation}>
+                        Projects
+                    </Link>
+                    <Link to="/contact" onClick={closeNavigation}>
+                        Contact
+                    </Link>
                 </nav>
             </div>
         </div>

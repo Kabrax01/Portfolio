@@ -22,7 +22,12 @@
         }
     }
     @if $breakpoint == XLScreen {
-        @media screen and (width > 1200px) {
+        @media screen and (max-width: 1600px) {
+            @content;
+        }
+    }
+    @if $breakpoint == XXLScreen {
+        @media screen and (width > 1600px) {
             @content;
         }
     }
