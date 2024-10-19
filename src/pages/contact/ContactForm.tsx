@@ -97,7 +97,7 @@ function ContactForm() {
                 <motion.div className="name" variants={formVariants}>
                     {errors?.name && <p className="error">{errors.name}</p>}
                     <label className="form_label" htmlFor="name">
-                        Name:
+                        Name*:
                     </label>
                     <input
                         className="input"
@@ -113,7 +113,7 @@ function ContactForm() {
                         <p className="error">{errors.surname}</p>
                     )}
                     <label className="form_label" htmlFor="surname">
-                        Surname:
+                        Surname*:
                     </label>
                     <input
                         className="input"
@@ -126,7 +126,7 @@ function ContactForm() {
                 <motion.div className="email" variants={formVariants}>
                     {errors?.email && <p className="error">{errors.email}</p>}
                     <label className="form_label" htmlFor="email">
-                        Email:
+                        Email*:
                     </label>
                     <input
                         className="input"
@@ -143,7 +143,7 @@ function ContactForm() {
                         <p className="error">{errors.message}</p>
                     )}
                     <label className="form_label" htmlFor="message">
-                        Message:
+                        Message*:
                     </label>
                     <textarea
                         className="message input"

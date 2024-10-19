@@ -119,6 +119,7 @@
         height: clamp(40rem, 50rem, 80vh);
         width: auto;
         border-radius: 50px;
+        margin-left: 2rem;
         transform: translateY(10px);
 
         @include scss.responsive(smallScreen) {
