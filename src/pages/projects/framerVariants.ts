@@ -1,9 +1,9 @@
-const DURATION = 1;
+const DURATION = 0.75;
 const EASE = "easeOut";
 const TYPE = "spring";
 
 export const variantLeft = {
-    initial: { x: "100%", opacity: 0 },
+    initial: { x: "50%", opacity: 0 },
     animate: {
         x: 0,
         opacity: 1,
@@ -26,7 +26,7 @@ export const variantLeft = {
 };
 
 export const variantRight = {
-    initial: { x: "-100%", opacity: 0 },
+    initial: { x: "-50%", opacity: 0 },
     animate: {
         x: 0,
         opacity: 1,

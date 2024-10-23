@@ -4,108 +4,151 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100%;
     width: 100%;
 
-    .project {
-        margin: 0 4rem;
+    &__container {
+        display: flex;
+        align-items: center;
         position: relative;
-        border-radius: scss.$border-radius-small;
-        box-shadow: 0 0 2rem scss.$color-wite-light;
-        border: 1px solid scss.$color-white;
 
-        h2 {
+        .slider__indicator {
+            display: flex;
+            gap: 1rem;
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            border-radius: scss.$border-radius-small;
-            padding: 1rem 0;
-            text-align: center;
-            font-size: 2.5rem;
-            backdrop-filter: blur(5px);
-            z-index: 20;
+            z-index: 100;
+            bottom: -1.5rem;
+            right: 50%;
+            transform: translateX(50%);
+
+            &__button {
+                background-color: scss.$color-white;
+                border: 1px solid scss.$color-black;
+                width: 1rem;
+                height: 1rem;
+                border-radius: scss.$border-radius-full;
+                cursor: pointer;
+            }
         }
 
-        &__img {
-            border-radius: scss.$border-radius-small;
-            overflow: hidden;
-            position: relative;
-            z-index: 10;
-            aspect-ratio: 16/9;
-            max-height: 30rem;
-            width: auto;
-            object-position: center;
+        .arrow {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            height: 100%;
 
-            img {
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.164);
+                border-radius: scss.$border-radius-medium;
+            }
+
+            &:active {
+                transform: scale(0.9);
+                transition: all 0.1s;
+            }
+        }
+
+        .project {
+            margin: 0 4rem;
+            position: relative;
+            border-radius: scss.$border-radius-small;
+            box-shadow: 0 0 2rem scss.$color-wite-light;
+            border: 1px solid scss.$color-white;
+
+            h2 {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
                 border-radius: scss.$border-radius-small;
-                transition: all 0.3s;
-                height: 100%;
+                padding: 1rem 0;
+                text-align: center;
+                font-size: 2.5rem;
+                backdrop-filter: blur(5px);
+                z-index: 20;
+            }
+
+            &__img {
+                border-radius: scss.$border-radius-small;
+                overflow: hidden;
+                position: relative;
+                z-index: 10;
+                aspect-ratio: 16/9;
+                max-height: 30rem;
+                width: auto;
+                object-position: center;
+
+                img {
+                    border-radius: scss.$border-radius-small;
+                    transition: all 0.3s;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                img:hover {
+                    scale: 1.1;
+                }
+            }
+
+            &__desc {
+                position: absolute;
+                background-color: scss.$color-white;
+                color: black;
+                text-align: center;
+                border-radius: scss.$border-radius-small;
+                bottom: 0;
+                transition: all scss.$transition-slow;
+                opacity: 0;
+                padding: 0.2rem 0.5rem;
                 width: 100%;
             }
 
-            img:hover {
-                scale: 1.1;
+            &__desc.open {
+                transform: translateY(calc(100% + 2rem));
+                opacity: 1;
             }
-        }
 
-        &__desc {
-            position: absolute;
-            background-color: scss.$color-white;
-            color: black;
-            text-align: center;
-            border-radius: scss.$border-radius-small;
-            bottom: 0;
-            transition: all scss.$transition-slow;
-            opacity: 0;
-            padding: 0.2rem 0.5rem;
-            width: 100%;
-        }
+            &__github,
+            &__website {
+                position: absolute;
+                padding: 0.5rem 1rem;
+                border-radius: scss.$border-radius-small;
+                background-color: scss.$color-white;
+                opacity: 0;
+                transition: all scss.$transition-slow;
 
-        &__desc.open {
-            transform: translateY(calc(100% + 1.5rem));
-            opacity: 1;
-        }
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
 
-        &__github,
-        &__website {
-            position: absolute;
-            padding: 0.5rem 1rem;
-            border-radius: scss.$border-radius-small;
-            background-color: scss.$color-white;
-            opacity: 0;
-            transition: all scss.$transition-slow;
+                    p {
+                        color: scss.$color-black;
+                    }
 
-            a {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-
-                p {
-                    color: scss.$color-black;
-                }
-
-                img {
-                    height: 3rem;
+                    img {
+                        height: 3rem;
+                    }
                 }
             }
-        }
 
-        &__github {
-            top: 10px;
-            left: 7rem;
-        }
+            &__github {
+                top: 10px;
+                left: 7rem;
+            }
 
-        &__github.open,
-        &__website.open {
-            top: -5.5rem;
-            opacity: 1;
-        }
+            &__github.open,
+            &__website.open {
+                top: -5.5rem;
+                opacity: 1;
+            }
 
-        &__website {
-            top: 10px;
-            right: 7rem;
+            &__website {
+                top: 10px;
+                right: 7rem;
+            }
         }
     }
 }

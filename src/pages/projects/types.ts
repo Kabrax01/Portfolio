@@ -28,3 +28,9 @@ export type ProjectProps = {
         };
     };
 };
+
+export interface SliderIndicatorProps {
+    setIndex: React.Dispatch<React.SetStateAction<number>>;
+    projectId: number;
+    index: number;
+}

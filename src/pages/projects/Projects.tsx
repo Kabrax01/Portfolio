@@ -4,6 +4,7 @@ import Project from "./Project";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { variantLeft, variantRight } from "./framerVariants";
+import SliderIndicator from "./SliderIndicator";
 
 function Projects() {
     const [index, setIndex] = useState(0);
@@ -33,25 +34,33 @@ function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}>
-            <img
-                className="arrow"
-                src="./arrow-left-white.png"
-                alt="arrow left"
-                onClick={moveLeft}
-            />
-            <AnimatePresence mode="wait">
-                <Project
-                    project={projects[index]}
-                    variant={variant}
-                    key={projects[index].id}
-                />
-            </AnimatePresence>
-            <img
-                className="arrow"
-                src="./arrow-right-white.png"
-                alt="arrow right"
-                onClick={moveRight}
-            />
+            <div className="projects__container">
+                <div className="slider__indicator">
+                    {projects.map((el) => {
+                        return (
+                            <SliderIndicator
+                                setIndex={setIndex}
+                                projectId={el.id}
+                                index={index}
+                            />
+                        );
+                    })}
+                </div>
+                <button className="arrow" onClick={moveLeft}>
+                    <img src="./arrow-left-white.png" alt="arrow left" />
+                </button>
+                <AnimatePresence mode="wait">
+                    <Project
+                        project={projects[index]}
+                        variant={variant}
+                        key={projects[index].id}
+                    />
+                </AnimatePresence>
+
+                <button className="arrow" onClick={moveRight}>
+                    <img src="./arrow-right-white.png" alt="arrow right" />
+                </button>
+            </div>
         </motion.div>
     );
 }
