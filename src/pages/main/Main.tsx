@@ -46,11 +46,11 @@ function Main() {
                                     variants={listVariants}
                                     className="technologies"
                                     key={tech.name}>
-                                    <p>{tech.name}</p>
                                     <img
                                         src={tech.img}
                                         alt={`${tech.name} icon`}
                                     />
+                                    <p>{tech.name}</p>
                                 </motion.li>
                             );
                         })}
@@ -60,7 +60,7 @@ function Main() {
             <motion.img
                 className="main__photo"
                 src="/no-bg-2.png"
-                alt=""
+                alt="Arnold Rogalski picture"
                 variants={imgVariants}
                 initial="initial"
                 animate="animate"
