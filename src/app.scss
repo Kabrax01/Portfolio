@@ -18,6 +18,7 @@ a {
 
 main {
     grid-row: 2/3;
+    flex-direction: column;
     justify-self: center;
     display: flex;
     align-items: center;
@@ -26,6 +27,19 @@ main {
     height: calc(100vh - 80px);
     max-width: 1800px;
     min-width: 90%;
+
+    .placeholder {
+        display: none;
+    }
+
+    @include scss.responsive(smallScreen) {
+        overflow-y: scroll;
+
+        .placeholder {
+            display: inline-block;
+            height: 1rem;
+        }
+    }
 }
 
 .layout {

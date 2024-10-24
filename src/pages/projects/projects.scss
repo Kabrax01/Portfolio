@@ -8,10 +8,27 @@
     height: 100%;
     width: 100%;
 
+    @include scss.responsive(smallScreen) {
+        justify-content: flex-start;
+        overflow-y: scroll;
+        width: 100vw;
+    }
+
     &__container {
         display: flex;
         align-items: center;
         position: relative;
+
+        @include scss.responsive(smallScreen) {
+            margin-top: 7rem;
+            margin-bottom: 3rem;
+        }
+
+        @include scss.responsive(mobile) {
+            margin-top: 5rem;
+            width: 100vw;
+            justify-content: center;
+        }
 
         .slider__indicator {
             display: flex;
@@ -38,6 +55,12 @@
             cursor: pointer;
             height: 100%;
 
+            img {
+                @include scss.responsive(smallScreen) {
+                    width: 3rem;
+                }
+            }
+
             &:hover {
                 background-color: rgba(0, 0, 0, 0.164);
                 border-radius: scss.$border-radius-medium;
@@ -56,6 +79,10 @@
             box-shadow: 0 0 2rem scss.$color-wite-light;
             border: 1px solid scss.$color-white;
 
+            @include scss.responsive(smallScreen) {
+                margin: 0;
+            }
+
             h2 {
                 position: absolute;
                 bottom: 0;
@@ -68,6 +95,10 @@
                 font-size: 2.5rem;
                 backdrop-filter: blur(5px);
                 z-index: 20;
+
+                @include scss.responsive(mobile) {
+                    font-size: 2rem;
+                }
             }
 
             &__img {
@@ -80,6 +111,16 @@
                 width: auto;
                 object-position: center;
 
+                @include scss.responsive(tablets) {
+                    aspect-ratio: 4/5;
+                    max-height: 75vh;
+                }
+
+                @include scss.responsive(mobile) {
+                    aspect-ratio: 1/1.5;
+                    max-width: 90vw;
+                }
+
                 img {
                     border-radius: scss.$border-radius-small;
                     transition: all 0.3s;
@@ -89,6 +130,10 @@
 
                 img:hover {
                     scale: 1.1;
+
+                    @include scss.responsive(tablets) {
+                        scale: none;
+                    }
                 }
             }
 
@@ -103,11 +148,21 @@
                 opacity: 0;
                 padding: 0.2rem 0.5rem;
                 width: 100%;
+
+                @include scss.responsive(mobile) {
+                    width: 90vw;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
             }
 
             &__desc.open {
-                transform: translateY(calc(100% + 2rem));
+                transform: translate(0, calc(100% + 2rem));
                 opacity: 1;
+
+                @include scss.responsive(mobile) {
+                    transform: translate(-50%, calc(100% + 2rem));
+                }
             }
 
             &__github,
@@ -118,6 +173,11 @@
                 background-color: scss.$color-white;
                 opacity: 0;
                 transition: all scss.$transition-slow;
+
+                @include scss.responsive(mobile) {
+                    font-size: 0.8rem;
+                    padding: 0.2rem 0.7rem;
+                }
 
                 a {
                     display: flex;
@@ -130,6 +190,10 @@
 
                     img {
                         height: 3rem;
+
+                        @include scss.responsive(mobile) {
+                            height: 2rem;
+                        }
                     }
                 }
             }
@@ -137,17 +201,29 @@
             &__github {
                 top: 10px;
                 left: 7rem;
+
+                @include scss.responsive(smallScreen) {
+                    left: 0;
+                }
             }
 
             &__github.open,
             &__website.open {
                 top: -5.5rem;
                 opacity: 1;
+
+                @include scss.responsive(mobile) {
+                    top: -4rem;
+                }
             }
 
             &__website {
                 top: 10px;
                 right: 7rem;
+
+                @include scss.responsive(smallScreen) {
+                    right: 0;
+                }
             }
         }
     }
