@@ -42,6 +42,7 @@ function Projects() {
                                 setIndex={setIndex}
                                 projectId={el.id}
                                 index={index}
+                                key={el.id}
                             />
                         );
                     })}

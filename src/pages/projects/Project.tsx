@@ -43,11 +43,15 @@ function Project({ project, variant }: ProjectProps) {
                         srcSet={`${mobileImg}.webp`}
                     />
                     <source
-                        media="(max-width: 1024px)"
+                        media="(max-width: 768px)"
                         srcSet={`${tabletsImg}.webp`}
                     />
                     <source media="(min-width: 769px)" srcSet={`${img}.webp`} />
-                    <img src={`${img}.webp`} alt={`${name} app screenshot`} />
+                    <img
+                        src={`${img}.webp`}
+                        alt={`${name} app screenshot`}
+                        onClick={() => setIsOpen(true)}
+                    />
                 </picture>
             </div>
             <div

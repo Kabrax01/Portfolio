@@ -8,6 +8,7 @@ function AppLayout() {
 
             <main>
                 <Outlet />
+                <div className="placeholder"></div>
             </main>
         </div>
     );
