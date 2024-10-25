@@ -35,7 +35,6 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
 
         if (!initialTouchPosition) return;
 
-        console.log(`Start ${initialTouchPosition}   End ${touchEnd}`);
         if (initialTouchPosition === touchEnd) {
             return;
         } else if (initialTouchPosition > touchEnd) {

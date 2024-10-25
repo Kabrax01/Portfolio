@@ -1,14 +1,23 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
 function AppLayout() {
+    const location = useLocation();
+
     return (
         <div className="layout">
             <Navbar />
 
             <main>
                 <Outlet />
-                {/* <div className="placeholder"></div> */}
+                <div
+                    className="placeholder"
+                    style={{
+                        display:
+                            location.pathname === "/projects"
+                                ? "block"
+                                : "none",
+                    }}></div>
             </main>
         </div>
     );
