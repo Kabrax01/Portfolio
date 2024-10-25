@@ -16,7 +16,11 @@ function Navbar() {
                     <img src="./logo.svg" alt="logo image" />
                 </Link>
 
-                <Hamburger toggled={isOpen} toggle={setIsOpen} />
+                <Hamburger
+                    toggled={isOpen}
+                    toggle={setIsOpen}
+                    label="Show menu button"
+                />
 
                 <nav className={`navigation ${isOpen ? "open" : ""}`}>
                     <Link to="/" onClick={closeNavigation}>
