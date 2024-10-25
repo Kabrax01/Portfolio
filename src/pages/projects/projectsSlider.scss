@@ -55,6 +55,10 @@
             cursor: pointer;
             height: 100%;
 
+            @include scss.responsive(mobile) {
+                display: none;
+            }
+
             img {
                 @include scss.responsive(smallScreen) {
                     width: 3rem;
