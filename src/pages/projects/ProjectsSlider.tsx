@@ -1,4 +1,4 @@
-import "./projects.scss";
+import "./projectsSlider.scss";
 import projects from "../../assets/projects";
 import Project from "./Project";
 import { useState } from "react";
@@ -54,6 +54,8 @@ function Projects() {
                     <Project
                         project={projects[index]}
                         variant={variant}
+                        moveLeft={moveLeft}
+                        moveRight={moveRight}
                         key={projects[index].id}
                     />
                 </AnimatePresence>

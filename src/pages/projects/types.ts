@@ -27,6 +27,8 @@ export type ProjectProps = {
             };
         };
     };
+    moveLeft: () => void;
+    moveRight: () => void;
 };
 
 export interface SliderIndicatorProps {

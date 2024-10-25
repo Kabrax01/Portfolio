@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ProjectProps } from "./types";
 
-function Project({ project, variant }: ProjectProps) {
+function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [initialTouchPosition, setInitialTouchPosition] = useState<
+        number | null
+    >(null);
 
     const {
         name,
@@ -27,10 +30,27 @@ function Project({ project, variant }: ProjectProps) {
         return () => clearTimeout(openDelay);
     }, []);
 
+    function fingerSlideChange(e: React.TouchEvent) {
+        const touchEnd = e.nativeEvent.changedTouches[0].clientX;
+
+        if (!initialTouchPosition) return;
+
+        console.log(`Start ${initialTouchPosition}   End ${touchEnd}`);
+        if (initialTouchPosition === touchEnd) {
+            return;
+        } else if (initialTouchPosition > touchEnd) {
+            moveLeft();
+        } else {
+            moveRight();
+        }
+    }
+
     return (
         <motion.div
             className="project"
             onMouseEnter={() => setIsOpen(true)}
+            onTouchStart={(e) => setInitialTouchPosition(e.touches[0].clientX)}
+            onTouchEnd={fingerSlideChange}
             initial="initial"
             animate="animate"
             exit="exit"
