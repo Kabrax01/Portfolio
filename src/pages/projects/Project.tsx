@@ -4,7 +4,10 @@ import { ProjectProps } from "./types";
 
 function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [initialTouchPosition, setInitialTouchPosition] = useState<
+    const [initialXTouchPosition, setInitialXTouchPosition] = useState<
+        number | null
+    >(null);
+    const [initialYTouchPosition, setInitialYTouchPosition] = useState<
         number | null
     >(null);
 
@@ -31,13 +34,20 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
     }, []);
 
     function fingerSlideChange(e: React.TouchEvent) {
-        const touchEnd = e.nativeEvent.changedTouches[0].clientX;
+        const touchEndX = e.nativeEvent.changedTouches[0].clientX;
+        const touchEndY = e.nativeEvent.changedTouches[0].clientY;
 
-        if (!initialTouchPosition) return;
-
-        if (initialTouchPosition === touchEnd) {
+        if (!initialXTouchPosition) return;
+        if (!initialYTouchPosition) return;
+        if (initialYTouchPosition > touchEndY + 100) {
             return;
-        } else if (initialTouchPosition > touchEnd) {
+        } else if (initialYTouchPosition < touchEndY - 100) {
+            return;
+        }
+
+        if (initialXTouchPosition === touchEndX) {
+            return;
+        } else if (initialXTouchPosition > touchEndX) {
             moveLeft();
         } else {
             moveRight();
@@ -48,7 +58,10 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
         <motion.div
             className="project"
             onMouseEnter={() => setIsOpen(true)}
-            onTouchStart={(e) => setInitialTouchPosition(e.touches[0].clientX)}
+            onTouchStart={(e) => {
+                setInitialXTouchPosition(e.touches[0].clientX);
+                setInitialYTouchPosition(e.touches[0].clientY);
+            }}
             onTouchEnd={fingerSlideChange}
             initial="initial"
             animate="animate"
