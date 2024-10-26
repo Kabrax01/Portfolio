@@ -39,9 +39,9 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
 
         if (!initialXTouchPosition) return;
         if (!initialYTouchPosition) return;
-        if (initialYTouchPosition > touchEndY + 100) {
+        if (initialYTouchPosition > touchEndY + 50) {
             return;
-        } else if (initialYTouchPosition < touchEndY - 100) {
+        } else if (initialYTouchPosition < touchEndY - 50) {
             return;
         }
 

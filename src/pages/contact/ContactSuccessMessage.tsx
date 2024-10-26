@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 import { messageVariants } from "./framerVariants";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface SuccessMessageProps {
     setSendEmailSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function ContactSuccessMessage({ setSendEmailSuccess }: SuccessMessageProps) {
+    const navigate = useNavigate();
+
     useEffect(() => {
         const remove = setTimeout(() => {
+            navigate("/Portfolio/");
             setSendEmailSuccess(false);
         }, 4000);
 
