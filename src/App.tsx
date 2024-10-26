@@ -5,19 +5,16 @@ import Main from "./pages/main/Main";
 import ProjectsSlider from "./pages/projects/ProjectsSlider";
 import Contact from "./pages/contact/Contact";
 
-const router = createBrowserRouter(
-    [
-        {
-            element: <AppLayout />,
-            children: [
-                { path: "/Portfolio/", element: <Main /> },
-                { path: "/Portfolio/projects", element: <ProjectsSlider /> },
-                { path: "/Portfolio/contact", element: <Contact /> },
-            ],
-        },
-    ],
-    { basename: "/Portfolio" }
-);
+const router = createBrowserRouter([
+    {
+        element: <AppLayout />,
+        children: [
+            { path: "/Portfolio/", element: <Main /> },
+            { path: "/Portfolio/projects", element: <ProjectsSlider /> },
+            { path: "/Portfolio/contact", element: <Contact /> },
+        ],
+    },
+]);
 
 function App() {
     return <RouterProvider router={router} />;
