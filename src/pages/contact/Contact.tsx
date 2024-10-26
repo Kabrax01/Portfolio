@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./contact.scss";
+import { useEffect, useState } from "react";
 import PhoneSvg from "./PhoneSvg";
 import { AnimatePresence } from "framer-motion";
 import ContactForm from "./ContactForm";
@@ -18,8 +18,7 @@ function Contact() {
     return (
         <>
             <AnimatePresence mode="wait">
-                {show && <PhoneSvg key="SVG" />}
-                {!show && <ContactForm key="contact" />}
+                {show ? <PhoneSvg key="SVG" /> : <ContactForm key="contact" />}
             </AnimatePresence>
         </>
     );

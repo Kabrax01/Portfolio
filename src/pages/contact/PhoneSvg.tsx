@@ -3,7 +3,7 @@ import { SvgVariants } from "./framerVariants";
 
 function PhoneSvg() {
     return (
-        <motion.div className="phoneSvg" key="SVG">
+        <motion.div className="phoneSvg">
             <div className="contact">
                 <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
                     <motion.path

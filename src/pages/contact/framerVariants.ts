@@ -6,6 +6,7 @@ export const containerVariants = {
             duration: 3,
         },
     },
+    exit: { opacity: 0, transition: { duration: 0.25 } },
 };
 
 export const h1Variants = {
@@ -49,4 +50,15 @@ export const SvgVariants = {
             duration: 1,
         },
     },
+};
+
+export const messageVariants = {
+    initial: { opacity: 0 },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 0.25,
+        },
+    },
+    exit: { opacity: 0, transition: { duration: 0.25 } },
 };

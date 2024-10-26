@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import { Errors, validateForm } from "../../utils/formValidation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { containerVariants, formVariants, h1Variants } from "./framerVariants";
+import ContactSuccessMessage from "./ContactSuccessMessage";
 
 function ContactForm() {
     const [name, setName] = useState("");
@@ -11,7 +12,9 @@ function ContactForm() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [sendEmailSuccess, setSendEmailSuccess] = useState(false);
     const [errors, setErrors] = useState<Errors | null>(null);
+
     const formRef = useRef<HTMLFormElement | null>(null);
 
     useEffect(() => {
@@ -70,7 +73,7 @@ function ContactForm() {
                     }
                 );
 
-                if (res.text === "OK") console.log("Success");
+                if (res.text === "OK") setSendEmailSuccess(true);
             } catch (error) {
                 console.error(`${error as Error}.message`);
             } finally {
@@ -82,84 +85,101 @@ function ContactForm() {
     }
 
     return (
-        <motion.div
-            className="contact"
-            variants={containerVariants}
-            initial="initial"
-            animate="animate"
-            key="contact">
-            <motion.h1 variants={h1Variants}>Get in touch !</motion.h1>
-            <motion.form
-                variants={formVariants}
-                className="contact_form"
-                ref={formRef}
-                onSubmit={handleSubmit}>
-                <motion.div className="name" variants={formVariants}>
-                    {errors?.name && <p className="error">{errors.name}</p>}
-                    <label className="form_label" htmlFor="name">
-                        Name*:
-                    </label>
-                    <input
-                        className="input"
-                        type="text"
-                        name="name"
-                        id="name"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                    />
-                </motion.div>
-                <motion.div className="surname" variants={formVariants}>
-                    {errors?.surname && (
-                        <p className="error">{errors.surname}</p>
-                    )}
-                    <label className="form_label" htmlFor="surname">
-                        Surname*:
-                    </label>
-                    <input
-                        className="input"
-                        type="text"
-                        name="surname"
-                        id="surname"
-                        onChange={(e) => setSurname(e.target.value)}
-                    />
-                </motion.div>
-                <motion.div className="email" variants={formVariants}>
-                    {errors?.email && <p className="error">{errors.email}</p>}
-                    <label className="form_label" htmlFor="email">
-                        Email*:
-                    </label>
-                    <input
-                        className="input"
-                        type="text"
-                        name="email"
-                        id="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </motion.div>
+        <AnimatePresence mode="wait">
+            {!sendEmailSuccess && (
                 <motion.div
-                    className="message_container"
-                    variants={formVariants}>
-                    {errors?.message && (
-                        <p className="error">{errors.message}</p>
-                    )}
-                    <label className="form_label" htmlFor="message">
-                        Message*:
-                    </label>
-                    <textarea
-                        className="message input"
-                        name="message"
-                        id="message"
-                        onChange={(e) => setMessage(e.target.value)}></textarea>
+                    className="contact"
+                    variants={containerVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    key="1">
+                    <motion.h1 variants={h1Variants}>Get in touch !</motion.h1>
+                    <motion.form
+                        variants={formVariants}
+                        className="contact_form"
+                        ref={formRef}
+                        onSubmit={handleSubmit}>
+                        <motion.div className="name" variants={formVariants}>
+                            {errors?.name && (
+                                <p className="error">{errors.name}</p>
+                            )}
+                            <label className="form_label" htmlFor="name">
+                                Name * :
+                            </label>
+                            <input
+                                className="input"
+                                type="text"
+                                name="name"
+                                id="name"
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                            />
+                        </motion.div>
+                        <motion.div className="surname" variants={formVariants}>
+                            {errors?.surname && (
+                                <p className="error">{errors.surname}</p>
+                            )}
+                            <label className="form_label" htmlFor="surname">
+                                Surname * :
+                            </label>
+                            <input
+                                className="input"
+                                type="text"
+                                name="surname"
+                                id="surname"
+                                onChange={(e) => setSurname(e.target.value)}
+                            />
+                        </motion.div>
+                        <motion.div className="email" variants={formVariants}>
+                            {errors?.email && (
+                                <p className="error">{errors.email}</p>
+                            )}
+                            <label className="form_label" htmlFor="email">
+                                Email * :
+                            </label>
+                            <input
+                                className="input"
+                                type="text"
+                                name="email"
+                                id="email"
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </motion.div>
+                        <motion.div
+                            className="message_container"
+                            variants={formVariants}>
+                            {errors?.message && (
+                                <p className="error">{errors.message}</p>
+                            )}
+                            <label className="form_label" htmlFor="message">
+                                Message * :
+                            </label>
+                            <textarea
+                                className="message input"
+                                name="message"
+                                id="message"
+                                onChange={(e) =>
+                                    setMessage(e.target.value)
+                                }></textarea>
+                        </motion.div>
+                        <motion.button
+                            className="form_button"
+                            type="submit"
+                            disabled={isLoading}
+                            variants={formVariants}>
+                            {isLoading ? "Sending..." : "Send"}
+                        </motion.button>
+                    </motion.form>
                 </motion.div>
-                <motion.button
-                    className="form_button"
-                    type="submit"
-                    disabled={isLoading}
-                    variants={formVariants}>
-                    {isLoading ? "Sending..." : "Send"}
-                </motion.button>
-            </motion.form>
-        </motion.div>
+            )}
+            {sendEmailSuccess && (
+                <ContactSuccessMessage
+                    setSendEmailSuccess={setSendEmailSuccess}
+                    key="message"
+                />
+            )}
+        </AnimatePresence>
     );
 }
 
