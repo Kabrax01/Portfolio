@@ -59,7 +59,7 @@ function Main() {
             </motion.div>
             <motion.img
                 className="main__photo"
-                src="/no-bg-2.png"
+                src="./no-bg-2.png"
                 alt="Arnold Rogalski picture"
                 variants={imgVariants}
                 initial="initial"

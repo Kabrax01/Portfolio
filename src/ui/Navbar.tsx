@@ -23,13 +23,13 @@ function Navbar() {
                 />
 
                 <nav className={`navigation ${isOpen ? "open" : ""}`}>
-                    <Link to="/" onClick={closeNavigation}>
+                    <Link to="/Portfolio/" onClick={closeNavigation}>
                         Main
                     </Link>
-                    <Link to="/projects" onClick={closeNavigation}>
+                    <Link to="/Portfolio/projects" onClick={closeNavigation}>
                         Projects
                     </Link>
-                    <Link to="/contact" onClick={closeNavigation}>
+                    <Link to="/Portfolio/contact" onClick={closeNavigation}>
                         Contact
                     </Link>
                 </nav>
