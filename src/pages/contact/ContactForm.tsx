@@ -5,7 +5,6 @@ import { Errors, validateForm } from "../../utils/formValidation";
 import { AnimatePresence, motion } from "framer-motion";
 import { containerVariants, formVariants, h1Variants } from "./framerVariants";
 import ContactSuccessMessage from "./ContactSuccessMessage";
-import { div } from "framer-motion/client";
 
 function ContactForm() {
     const [name, setName] = useState("");

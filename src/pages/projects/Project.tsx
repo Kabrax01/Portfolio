@@ -28,7 +28,7 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
     useEffect(() => {
         const openDelay = setTimeout(() => {
             setIsOpen(true);
-        }, 1000);
+        }, 500);
 
         return () => clearTimeout(openDelay);
     }, []);
