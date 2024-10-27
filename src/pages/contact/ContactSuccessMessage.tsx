@@ -14,7 +14,7 @@ function ContactSuccessMessage({ setSendEmailSuccess }: SuccessMessageProps) {
         const remove = setTimeout(() => {
             navigate("/Portfolio/");
             setSendEmailSuccess(false);
-        }, 4000);
+        }, 5000);
 
         return () => clearTimeout(remove);
     });

@@ -12,7 +12,7 @@ function Navbar() {
     return (
         <div className="navbar">
             <div className="navbar__container">
-                <Link to="/" className="logo_link">
+                <Link to="/Portfolio/" className="logo_link">
                     <img src="./logo.svg" alt="logo image" />
                 </Link>
 
