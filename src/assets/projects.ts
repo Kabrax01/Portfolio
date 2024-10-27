@@ -69,6 +69,17 @@ const projects: ProjectsType[] = [
         id: 5,
     },
     {
+        name: "Password generator",
+        siteUrl: "https://kabrax01.github.io/Password-generator/",
+        githubUrl: "https://github.com/Kabrax01/Password-generator",
+        img: `${import.meta.env.BASE_URL}./projects/Password_large`,
+        tabletsImg: `${import.meta.env.BASE_URL}./projects/Password_medium`,
+        mobileImg: `${import.meta.env.BASE_URL}./projects/Password_mobile`,
+        description:
+            "Application for generating random passwords. It provides custom options like password length and different types of characters to choose from",
+        id: 6,
+    },
+    {
         name: "Tic-Tac-Toe",
         siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
         githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
@@ -76,7 +87,7 @@ const projects: ProjectsType[] = [
         tabletsImg: `${import.meta.env.BASE_URL}./projects/TTT_medium`,
         mobileImg: `${import.meta.env.BASE_URL}./projects/TTT_mobile`,
         description: "Classic Tic-Tac-Toe game",
-        id: 6,
+        id: 7,
     },
 ];
 
