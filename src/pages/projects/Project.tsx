@@ -95,7 +95,10 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
                 className={`project__github ${isOpen ? "open" : ""}`}
                 onClick={close}>
                 <a href={githubUrl} target="blank">
-                    <img src="./github.svg" alt="github icon" />
+                    <img
+                        src={`${import.meta.env.BASE_URL}./github.svg`}
+                        alt="github icon"
+                    />
                     <p>Github</p>
                 </a>
             </div>
@@ -103,7 +106,10 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
                 className={`project__website ${isOpen ? "open" : ""}`}
                 onClick={close}>
                 <a href={siteUrl} target="blank">
-                    <img src="./logo_icon.svg" alt="logo icon" />
+                    <img
+                        src={`${import.meta.env.BASE_URL}./logo_icon.svg`}
+                        alt="logo icon"
+                    />
                     <p>Live Website</p>
                 </a>
             </div>

@@ -13,9 +13,9 @@ const projects: ProjectsType[] = [
         name: "Chatrix",
         siteUrl: "https://kabrax01.github.io/Chatrix/",
         githubUrl: "https://github.com/Kabrax01/Chatrix",
-        img: "/projects/chatrix_large",
-        tabletsImg: "/projects/chatrix_medium",
-        mobileImg: "/projects/chatrix_mobile",
+        img: `${import.meta.env.BASE_URL}./projects/chatrix_large`,
+        tabletsImg: `${import.meta.env.BASE_URL}./projects/chatrix_medium`,
+        mobileImg: `${import.meta.env.BASE_URL}./projects/chatrix_mobile`,
         description:
             "Chatrix is a real-time communication application that allows users to send text and multimedia messages in private chats. The app offers features such as registration, login, user profile management (changing name, profile picture), and searching for other users to start a conversation. It provides a simple interface with a chat list view, enabling users to easily switch between conversations, as well as intuitive messaging and multimedia sharing.",
         id: 1,
