@@ -1,5 +1,5 @@
-const DURATION = 0.75;
-const EASE = "easeOut";
+const DURATION = 0.5;
+const EASE = "linear";
 const TYPE = "spring";
 
 export const variantLeft = {

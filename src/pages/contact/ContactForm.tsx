@@ -5,6 +5,7 @@ import { Errors, validateForm } from "../../utils/formValidation";
 import { AnimatePresence, motion } from "framer-motion";
 import { containerVariants, formVariants, h1Variants } from "./framerVariants";
 import ContactSuccessMessage from "./ContactSuccessMessage";
+import { div } from "framer-motion/client";
 
 function ContactForm() {
     const [name, setName] = useState("");
@@ -14,6 +15,7 @@ function ContactForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [sendEmailSuccess, setSendEmailSuccess] = useState(false);
     const [errors, setErrors] = useState<Errors | null>(null);
+    const [sendingError, setSendingError] = useState(false);
 
     const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -50,6 +52,12 @@ function ContactForm() {
         };
     }, []);
 
+    useEffect(() => {
+        const clearError = setTimeout(() => setSendingError(false), 4000);
+
+        return () => clearTimeout(clearError);
+    }, [sendingError]);
+
     function handleSubmit(e: React.SyntheticEvent) {
         e.preventDefault();
 
@@ -76,6 +84,7 @@ function ContactForm() {
                 if (res.text === "OK") setSendEmailSuccess(true);
             } catch (error) {
                 console.error(`${error as Error}.message`);
+                setSendingError(true);
             } finally {
                 setIsLoading(false);
             }
@@ -112,6 +121,7 @@ function ContactForm() {
                                 type="text"
                                 name="name"
                                 id="name"
+                                maxLength={24}
                                 onChange={(e) => setName(e.target.value)}
                                 value={name}
                             />
@@ -128,6 +138,7 @@ function ContactForm() {
                                 type="text"
                                 name="surname"
                                 id="surname"
+                                maxLength={24}
                                 onChange={(e) => setSurname(e.target.value)}
                             />
                         </motion.div>
@@ -143,6 +154,7 @@ function ContactForm() {
                                 type="text"
                                 name="email"
                                 id="email"
+                                maxLength={40}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </motion.div>
@@ -163,12 +175,18 @@ function ContactForm() {
                                     setMessage(e.target.value)
                                 }></textarea>
                         </motion.div>
+
                         <motion.button
                             className="form_button"
                             type="submit"
+                            style={{ background: sendingError ? "red" : "" }}
                             disabled={isLoading}
                             variants={formVariants}>
-                            {isLoading ? "Sending..." : "Send"}
+                            {isLoading
+                                ? "Sending..."
+                                : sendingError
+                                ? "Something went wrong... try again later"
+                                : "Send"}
                         </motion.button>
                     </motion.form>
                 </motion.div>

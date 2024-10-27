@@ -12,19 +12,19 @@ function Projects() {
 
     function moveRight() {
         setVariant(variantRight);
-        if (index === 0) {
-            setIndex(projects.length - 1);
+        if (index === projects.length - 1) {
+            setIndex(0);
         } else {
-            setIndex((prev) => prev - 1);
+            setIndex((prev) => prev + 1);
         }
     }
 
     function moveLeft() {
         setVariant(variantLeft);
-        if (index === projects.length - 1) {
-            setIndex(0);
+        if (index === 0) {
+            setIndex(projects.length - 1);
         } else {
-            setIndex((prev) => prev + 1);
+            setIndex((prev) => prev - 1);
         }
     }
 
