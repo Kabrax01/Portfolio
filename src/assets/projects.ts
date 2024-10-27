@@ -80,6 +80,17 @@ const projects: ProjectsType[] = [
         id: 6,
     },
     {
+        name: "To Do List",
+        siteUrl: "https://kabrax01.github.io/React_To-Do-List/",
+        githubUrl: "https://github.com/Kabrax01/React_To-Do-List",
+        img: `${import.meta.env.BASE_URL}./projects/TDL_large`,
+        tabletsImg: `${import.meta.env.BASE_URL}./projects/TDL_medium`,
+        mobileImg: `${import.meta.env.BASE_URL}./projects/TDL_mobile`,
+        description:
+            "Simple To Do List. It allows users to add, delete and edit list of different tasks",
+        id: 7,
+    },
+    {
         name: "Tic-Tac-Toe",
         siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
         githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
@@ -87,7 +98,7 @@ const projects: ProjectsType[] = [
         tabletsImg: `${import.meta.env.BASE_URL}./projects/TTT_medium`,
         mobileImg: `${import.meta.env.BASE_URL}./projects/TTT_mobile`,
         description: "Classic Tic-Tac-Toe game",
-        id: 7,
+        id: 8,
     },
 ];
 
