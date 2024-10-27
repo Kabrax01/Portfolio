@@ -54,6 +54,21 @@ const projects: ProjectsType[] = [
         id: 4,
     },
     {
+        name: "Weather Forecast",
+        siteUrl: "https://kabrax01.github.io/Weather_App/",
+        githubUrl: "https://github.com/Kabrax01/Weather_App",
+        img: `${import.meta.env.BASE_URL}./projects/WeatherForecast_large`,
+        tabletsImg: `${
+            import.meta.env.BASE_URL
+        }./projects/WeatherForecast_medium`,
+        mobileImg: `${
+            import.meta.env.BASE_URL
+        }./projects/WeatherForecast_mobile`,
+        description:
+            "Weather app for displaying weather forecast for current and searched location. Builded mainly for mobile devices",
+        id: 5,
+    },
+    {
         name: "Tic-Tac-Toe",
         siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
         githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
@@ -61,7 +76,7 @@ const projects: ProjectsType[] = [
         tabletsImg: `${import.meta.env.BASE_URL}./projects/TTT_medium`,
         mobileImg: `${import.meta.env.BASE_URL}./projects/TTT_mobile`,
         description: "Classic Tic-Tac-Toe game",
-        id: 5,
+        id: 6,
     },
 ];
 
