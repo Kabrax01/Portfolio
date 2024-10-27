@@ -4,8 +4,6 @@ import Navbar from "./Navbar";
 function AppLayout() {
     const location = useLocation();
 
-    console.log(location);
-
     return (
         <div className="layout">
             <Navbar />
@@ -16,8 +14,7 @@ function AppLayout() {
                     className="placeholder"
                     style={{
                         display:
-                            location.pathname ===
-                            `${import.meta.env.BASE_URL}/projects`
+                            location.pathname == "/Portfolio/projects"
                                 ? "block"
                                 : "none",
                     }}></div>
