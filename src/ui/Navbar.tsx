@@ -13,7 +13,7 @@ function Navbar() {
         <div className="navbar">
             <div className="navbar__container">
                 <Link to="/Portfolio/" className="logo_link">
-                    <img src="./public/logo.svg" alt="logo image" />
+                    <img src="./logo.svg" alt="logo image" />
                 </Link>
 
                 <Hamburger
