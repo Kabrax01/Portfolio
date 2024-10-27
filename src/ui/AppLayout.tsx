@@ -14,7 +14,8 @@ function AppLayout() {
                     className="placeholder"
                     style={{
                         display:
-                            location.pathname == "/Portfolio/projects"
+                            location.pathname == "/Portfolio/projects" ||
+                            location.pathname == "/Portfolio/projects/"
                                 ? "block"
                                 : "none",
                     }}></div>
