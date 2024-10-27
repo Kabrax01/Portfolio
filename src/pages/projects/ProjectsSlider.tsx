@@ -48,7 +48,12 @@ function Projects() {
                     })}
                 </div>
                 <button className="arrow" onClick={moveLeft}>
-                    <img src="./arrow-left-white.png" alt="arrow left" />
+                    <img
+                        src={`${
+                            import.meta.env.BASE_URL
+                        }./arrow-left-white.png`}
+                        alt="arrow left"
+                    />
                 </button>
                 <AnimatePresence mode="wait">
                     <Project
@@ -61,7 +66,12 @@ function Projects() {
                 </AnimatePresence>
 
                 <button className="arrow" onClick={moveRight}>
-                    <img src="./arrow-right-white.png" alt="arrow right" />
+                    <img
+                        src={`${
+                            import.meta.env.BASE_URL
+                        }./arrow-right-white.png`}
+                        alt="arrow right"
+                    />
                 </button>
             </div>
         </motion.div>
