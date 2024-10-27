@@ -106,6 +106,7 @@ function ContactForm() {
                     <motion.form
                         variants={formVariants}
                         className="contact_form"
+                        autoComplete="off"
                         ref={formRef}
                         onSubmit={handleSubmit}>
                         <motion.div className="name" variants={formVariants}>
@@ -120,6 +121,7 @@ function ContactForm() {
                                 type="text"
                                 name="name"
                                 id="name"
+                                autoComplete="none"
                                 maxLength={24}
                                 onChange={(e) => setName(e.target.value)}
                                 value={name}
@@ -137,6 +139,7 @@ function ContactForm() {
                                 type="text"
                                 name="surname"
                                 id="surname"
+                                autoComplete="none"
                                 maxLength={24}
                                 onChange={(e) => setSurname(e.target.value)}
                             />
