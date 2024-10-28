@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# Protfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-   Live Site URL: [https://kabrax01.github.io/Portfolio/](https://kabrax01.github.io/Portfolio/)
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="./public/Portfolio_large.webp" width="800">
 
-## Expanding the ESLint configuration
+## General Information
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+My personal portfolio
 
-- Configure the top-level `parserOptions` property like this:
+## Built with
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+-   [Semantic HTML5 markup](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+-   [SCSS](https://sass-lang.com/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [React](https://reactjs.org/)
+-   [React Router](https://reactrouter.com/en/main)
+-   [Framer Motion](https://www.framer.com/motion/)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Author
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+-   Github - [Kabrax01](https://github.com/Kabrax01)
