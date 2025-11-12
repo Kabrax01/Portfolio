@@ -99,6 +99,7 @@
                 font-size: 2.5rem;
                 backdrop-filter: blur(5px);
                 z-index: 20;
+                -webkit-text-stroke: 0.09rem black;
 
                 @include scss.responsive(mobile) {
                     font-size: 2rem;

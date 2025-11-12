@@ -44,11 +44,12 @@ main {
 }
 
 .layout {
-    min-height: 100dvh;
+    height: 100dvh;
     width: 100vw;
     background-color: scss.$color-primary-blue;
     display: grid;
     grid-template-rows: auto 1fr;
+    align-items: end;
     color: scss.$color-white;
     overflow: hidden;
 }
@@ -151,5 +152,12 @@ main {
                 width: 100%;
             }
         }
+    }
+}
+
+@media (resolution: 1.25dppx) {
+    html {
+        font-size: 0.8rem;
+        height: 50vh;
     }
 }
