@@ -21,6 +21,17 @@ const projects: ProjectsType[] = [
         id: 1,
     },
     {
+        name: "Post It!",
+        siteUrl: "",
+        githubUrl: "https://github.com/Kabrax01/Post_It",
+        img: `${import.meta.env.BASE_URL}./projects/postIt_large`,
+        tabletsImg: `${import.meta.env.BASE_URL}./projects/postIt_medium`,
+        mobileImg: `${import.meta.env.BASE_URL}./projects/postIt_mobile`,
+        description:
+            "Post It is a modern blog application that allows users to create, edit, and delete posts. Each post can include a title, author, content preview, and a timestamp. Users can also search for posts by author or sort them by date, making it easy to manage and explore notes efficiently.",
+        id: 2,
+    },
+    {
         name: "React Quiz",
         siteUrl: "https://kabrax01.github.io/React_Quiz/",
         githubUrl: "https://github.com/Kabrax01/React_Quiz",
@@ -29,7 +40,7 @@ const projects: ProjectsType[] = [
         mobileImg: `${import.meta.env.BASE_URL}./projects/react_quiz_mobile`,
         description:
             "Quiz app with time restrictions, score counter, and minimalistic interface for testing knowledge about React framework. It uses firebase to store questions, enabling future expanding for multi topics selection",
-        id: 2,
+        id: 3,
     },
     {
         name: "Tomasz Gruchacz Racing",
@@ -40,7 +51,7 @@ const projects: ProjectsType[] = [
         mobileImg: `${import.meta.env.BASE_URL}./projects/TGR_mobile`,
         description:
             "Landing page for Tomasz Gruchacz - motorcycle racer. With on-scroll animations, auto image slider and contact form. Written in vanilla JavaScript",
-        id: 3,
+        id: 4,
     },
     {
         name: "Notes",
@@ -51,7 +62,7 @@ const projects: ProjectsType[] = [
         mobileImg: `${import.meta.env.BASE_URL}./projects/notes_mobile`,
         description:
             "Notes is simple application allowing users to add, delete and edit notes. It stores data in browser storage. Builded without using context API to face the problem of props-drilling",
-        id: 4,
+        id: 5,
     },
     {
         name: "Weather Forecast",
@@ -66,40 +77,40 @@ const projects: ProjectsType[] = [
         }./projects/WeatherForecast_mobile`,
         description:
             "Weather app for displaying weather forecast for current and searched location. Builded mainly for mobile devices",
-        id: 5,
-    },
-    {
-        name: "Password generator",
-        siteUrl: "https://kabrax01.github.io/Password-generator/",
-        githubUrl: "https://github.com/Kabrax01/Password-generator",
-        img: `${import.meta.env.BASE_URL}./projects/Password_large`,
-        tabletsImg: `${import.meta.env.BASE_URL}./projects/Password_medium`,
-        mobileImg: `${import.meta.env.BASE_URL}./projects/Password_mobile`,
-        description:
-            "Application for generating random passwords. It provides custom options like password length and different types of characters to choose from",
         id: 6,
     },
-    {
-        name: "To Do List",
-        siteUrl: "https://kabrax01.github.io/React_To-Do-List/",
-        githubUrl: "https://github.com/Kabrax01/React_To-Do-List",
-        img: `${import.meta.env.BASE_URL}./projects/TDL_large`,
-        tabletsImg: `${import.meta.env.BASE_URL}./projects/TDL_medium`,
-        mobileImg: `${import.meta.env.BASE_URL}./projects/TDL_mobile`,
-        description:
-            "Simple To Do List. It allows users to add, delete and edit list of different tasks",
-        id: 7,
-    },
-    {
-        name: "Tic-Tac-Toe",
-        siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
-        githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
-        img: `${import.meta.env.BASE_URL}./projects/TTT_large`,
-        tabletsImg: `${import.meta.env.BASE_URL}./projects/TTT_medium`,
-        mobileImg: `${import.meta.env.BASE_URL}./projects/TTT_mobile`,
-        description: "Classic Tic-Tac-Toe game",
-        id: 8,
-    },
+    // {
+    //     name: "Password generator",
+    //     siteUrl: "https://kabrax01.github.io/Password-generator/",
+    //     githubUrl: "https://github.com/Kabrax01/Password-generator",
+    //     img: `${import.meta.env.BASE_URL}./projects/Password_large`,
+    //     tabletsImg: `${import.meta.env.BASE_URL}./projects/Password_medium`,
+    //     mobileImg: `${import.meta.env.BASE_URL}./projects/Password_mobile`,
+    //     description:
+    //         "Application for generating random passwords. It provides custom options like password length and different types of characters to choose from",
+    //     id: 6,
+    // },
+    // {
+    //     name: "To Do List",
+    //     siteUrl: "https://kabrax01.github.io/React_To-Do-List/",
+    //     githubUrl: "https://github.com/Kabrax01/React_To-Do-List",
+    //     img: `${import.meta.env.BASE_URL}./projects/TDL_large`,
+    //     tabletsImg: `${import.meta.env.BASE_URL}./projects/TDL_medium`,
+    //     mobileImg: `${import.meta.env.BASE_URL}./projects/TDL_mobile`,
+    //     description:
+    //         "Simple To Do List. It allows users to add, delete and edit list of different tasks",
+    //     id: 7,
+    // },
+    // {
+    //     name: "Tic-Tac-Toe",
+    //     siteUrl: "https://kabrax01.github.io/Tic-Tac-Toe/",
+    //     githubUrl: "https://github.com/Kabrax01/Tic-Tac-Toe",
+    //     img: `${import.meta.env.BASE_URL}./projects/TTT_large`,
+    //     tabletsImg: `${import.meta.env.BASE_URL}./projects/TTT_medium`,
+    //     mobileImg: `${import.meta.env.BASE_URL}./projects/TTT_mobile`,
+    //     description: "Classic Tic-Tac-Toe game",
+    //     id: 8,
+    // },
 ];
 
 export default projects;

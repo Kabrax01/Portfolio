@@ -102,17 +102,19 @@ function Project({ project, variant, moveLeft, moveRight }: ProjectProps) {
                     <p>Github</p>
                 </a>
             </div>
-            <div
-                className={`project__website ${isOpen ? "open" : ""}`}
-                onClick={close}>
-                <a href={siteUrl} target="blank">
-                    <img
-                        src={`${import.meta.env.BASE_URL}./logo_icon.svg`}
-                        alt="logo icon"
-                    />
-                    <p>Live Website</p>
-                </a>
-            </div>
+            {siteUrl && (
+                <div
+                    className={`project__website ${isOpen ? "open" : ""}`}
+                    onClick={close}>
+                    <a href={siteUrl} target="blank">
+                        <img
+                            src={`${import.meta.env.BASE_URL}./logo_icon.svg`}
+                            alt="logo icon"
+                        />
+                        <p>Live Website</p>
+                    </a>
+                </div>
+            )}
         </motion.div>
     );
 }
