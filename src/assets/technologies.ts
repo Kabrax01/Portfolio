@@ -14,6 +14,7 @@ const technologies: techType[] = [
     { name: "Firebase", img: "./firebase.png" },
     { name: "Vitest", img: "./vitest.png" },
     { name: "RTL", img: "./octopus.png" },
+    { name: "Docker", img: "./docker-mark-blue.png" },
     { name: "Git", img: "./git.png" },
 ];
 
